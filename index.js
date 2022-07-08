@@ -14,6 +14,7 @@ async function getFetch(){
     try {
         const choice = document.querySelector('input').value.toLowerCase().trim().replace(/ /g,"_");
         const choice2 = document.querySelector('input').value.trim();
+        const choice3 = document.querySelector('input').value.toLowerCase().trim().replace(/ /g,"-")
         //artist name will replace space(s) with underscore(s)
         const url = `https://www.theaudiodb.com/api/v1/json/2/search.php?s=${choice}`
         const res = await fetch(url)
@@ -55,11 +56,6 @@ async function getFetch(){
         artistOrigin.push(data.artists[0].strCountry)
         document.querySelector(".origin").innerText = artistOrigin[0]
 
-        let artistWebsite = []
-        artistWebsite.push(data.artists[0].strWebsite)
-        document.querySelector(".website").innerText = artistWebsite[0]
-        document.querySelector(".website-link").href = `https://${artistWebsite[0]}`
-
         let artistBio = []
         artistBio.push(data.artists[0].strBiographyEN)
         document.querySelector(".bio").innerText = artistBio[0]
@@ -69,8 +65,7 @@ async function getFetch(){
         musicSocials.classList.remove('hidden')
         document.querySelector("#spotifySearch").href = `https://open.spotify.com/search/${choice2}`
         document.querySelector("#youtubeSearch").href = `https://music.youtube.com/search?q=${choice2}`
-
-
+        document.querySelector("#appleSearch").href = `https://www.apple.com/us/search/${choice3}?src=globalnav`
 
         console.log(data.artists[0])
     }catch (error){
@@ -88,8 +83,6 @@ function errorStyle(){ //Resets the styling if error was caught in getFetch()
     document.querySelector(".genre").innerText = ``
     document.querySelector(".mood").innerText = ``
     document.querySelector(".origin").innerText = ``
-    document.querySelector(".website").innerText = ``
-    document.querySelector(".website-link").href = ``
     document.querySelector(".bio").innerText = ``
     document.querySelector("#myBtn").innerText = ``
     artistLogo.classList.add('hidden');

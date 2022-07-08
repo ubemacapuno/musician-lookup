@@ -82,14 +82,24 @@ button:hover{
 .artist-output{
     display: flex;
     align-items: center;
-    margin: 1rem;
+    margin: 0 1rem;
     padding: 0 2rem;
+}
+
+.column{
+    display: flex;
+    align-items: center;
+}
+
+.artist-text-data{
+    margin-left: 1rem;
 }
 
 .artist-text-data p {
     margin: 0 auto;
     text-align: left;
 }
+
 
 #myBtn, .artist-text-data p {
     font-size: 1.3rem;
@@ -106,6 +116,8 @@ button:hover{
 }
 
 .musicSocials {
+    display: flex;
+    flex-direction: column;
     margin: 1rem 0;
 }
 
@@ -127,7 +139,7 @@ footer a{
     color: black;
 }
 
-footer a:hover, .website:hover, #myBtn:hover{
+footer a:hover, #myBtn:hover{
     background-color: var(--accent-color);
     color: var(--tertiary-color);
     transition: 0.1s;
@@ -162,7 +174,7 @@ a{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
 
-#myBtn, .website{
+#myBtn {
     cursor: pointer;
     color: var(--secondary-color);
 }
