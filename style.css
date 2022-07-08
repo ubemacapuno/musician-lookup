@@ -1,0 +1,225 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Inconsolata', monospace;
+    --background-color: #FFFF64;
+    --primary-color: #FFFF64;
+    --accent-color: #FF66FF;
+    --secondary-color: #6666FF;
+    --tertiary-color: #66FF66;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+body {
+    background-color: var(--background-color);
+}
+header{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+button{
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-family: 'Inconsolata', monospace;
+}
+
+button:hover{
+    background-color: var(--tertiary-color);
+    border: 1px solid black;
+    color: black;
+    transition: 0.1s;
+}
+
+.artist-output{
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    padding: 0 2rem;
+}
+
+.artist-text-data p {
+    margin: 0 auto;
+    text-align: left;
+}
+
+#myBtn, .artist-text-data p {
+    font-size: 1.3rem;
+}
+
+.artist-thumbnail{
+    max-width: 450px;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.artist-logo{
+    max-width: 400px;
+}
+
+footer {
+    text-align: center;
+}
+
+footer a{
+    cursor: pointer;
+    text-decoration: underline;
+    color: black;
+}
+
+footer a:hover, .website:hover, #myBtn:hover{
+    background-color: var(--accent-color);
+    color: var(--tertiary-color);
+    transition: 0.1s;
+    font-style: italic;
+}
+
+
+a{
+    text-decoration: inherit;
+}
+
+
+/******************************************
+/* UTILITY
+/*******************************************/
+
+.hidden {
+    display:none;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+#myBtn, .website{
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+  /* Modal Content/Box */
+.modal-content {
+    background-color: black;
+    color: var(--accent-color);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid white;
+    width: 90%; /* Could be more or less, depending on screen size */
+}
+
+.modal p{
+  line-height: 1.5;
+}
+  
+  /* The Close Button */
+.close {
+    
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: var(--secondary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+
+@media (max-width: 700px){
+    .artist-output{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #myBtn, .artist-text-data p {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 520px){
+    .artist-logo{
+        max-width: 300px;
+    }
+
+    .artist-thumbnail{
+        max-width: 300px;
+    }
+
+}
+
+@media (max-width: 350px){
+    .artist-logo{
+        max-width: 210px;
+    }
+
+    .artist-thumbnail{
+        max-width: 210px;
+    }
+
+    #myBtn, .artist-text-data p {
+        font-size: 1rem;
+    }
+
+}

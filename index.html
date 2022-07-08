@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Musical Artist Lookup</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Look Up A Musical Artist.</h1>
+            <img id="artistLogo" class="artist-logo image hidden" src="" alt="Artist Logo">
+        </header>
+
+        <main>
+            <div class="form-input">
+                <input type="text" name="" value="" placeholder="Musical Artist Name">
+                <div class="buttons">
+                    <button type="button" id="button1" name="button">Submit</button>
+                    <button type="button" id="button2" name="button">Reset</button>
+                </div>
+            </div>
+
+            <section class="biography"> 
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p class="bio"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="artist-output">
+                <img id="artistThumbnail" class="artist-thumbnail image hidden" src="" alt="Artist Photo">
+
+                <section class="artist-text-data"> 
+                    <p class="name"></p>
+                    <a id="myBtn"></a>  
+                    <p class="label"></p>
+                    <p class="year-formed"></p>
+                    <p class="genre"></p>
+                    <p class="mood"></p>
+                    <p class="origin"></p>
+                    <a class="website-link" href="" target="_blank"><p class="website"></p></a>
+                </section>
+            </section>
+
+        </main>
+        <footer>
+            <p>Database by <a href="https://www.theaudiodb.com/api_guide.php" target="_blank">TheAudioDB</a>.</p>
+            <p>App by <a href="https://github.com/ubemacapuno" target="_blank">Corey Damocles</a>.</p>
+      </footer>
+    <script src="index.js"></script>
+    </body>
+</html>
