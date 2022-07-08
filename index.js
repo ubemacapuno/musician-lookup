@@ -7,11 +7,13 @@ function removeHidden(){
     artistLogo.classList.remove('hidden');
     artistThumbnail.classList.remove('hidden');
     title.classList.add('hidden');
+    musicSocials.classList.add('hidden')
 }
 
 async function getFetch(){ 
     try {
         const choice = document.querySelector('input').value.toLowerCase().trim().replace(/ /g,"_");
+        const choice2 = document.querySelector('input').value.trim();
         //artist name will replace space(s) with underscore(s)
         const url = `https://www.theaudiodb.com/api/v1/json/2/search.php?s=${choice}`
         const res = await fetch(url)
@@ -63,6 +65,13 @@ async function getFetch(){
         document.querySelector(".bio").innerText = artistBio[0]
         document.querySelector("#myBtn").innerText = "Biography"
 
+        //social media icons/links for search:
+        musicSocials.classList.remove('hidden')
+        document.querySelector("#spotifySearch").href = `https://open.spotify.com/search/${choice2}`
+        document.querySelector("#youtubeSearch").href = `https://music.youtube.com/search?q=${choice2}`
+
+
+
         console.log(data.artists[0])
     }catch (error){
         errorStyle()
@@ -86,6 +95,7 @@ function errorStyle(){ //Resets the styling if error was caught in getFetch()
     artistLogo.classList.add('hidden');
     artistThumbnail.classList.add('hidden');
     title.classList.remove('hidden')
+    musicSocials.classList.add('hidden')
 }
 
 //MODAL:

@@ -101,12 +101,24 @@ button:hover{
     border-radius: 20px;
 }
 
+.musicSocials a {
+    padding: 1rem;
+}
+
+.musicSocials {
+    margin: 1rem 0;
+}
+
 .artist-logo{
     max-width: 400px;
 }
 
 footer {
     text-align: center;
+}
+
+footer p, footer a {
+    margin: 0 auto;
 }
 
 footer a{
